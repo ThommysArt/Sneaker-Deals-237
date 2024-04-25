@@ -40,11 +40,12 @@ To get started with the Sneaker Deals project, follow these steps:
 
    Create a `.env.local` file in the root directory and add the following variables:
 
-   NEXT_PUBLIC_CLERK_FRONTEND_API_URL=<your-clerk-frontend-api-url>
-   CLERK_API_KEY=<your-clerk-api-key>
-   EDGE_STORE_ACCESS_KEY=<your-edge-store-access-key>
-   EDGE_STORE_SECRET_KEY=<your-edge-store-secret-key>
-   
+   ```bash
+   NEXT_PUBLIC_CLERK_FRONTEND_API_URL = <your-clerk-frontend-api-url>
+   CLERK_API_KEY = <your-clerk-api-key>
+   EDGE_STORE_ACCESS_KEY = <your-edge-store-access-key>
+   EDGE_STORE_SECRET_KEY = <your-edge-store-secret-key>
+   ```
    
 
    Replace `<your-clerk-frontend-api-url>`, `<your-clerk-api-key>`, `<your-edge-store-secret-key>` and `<your-edge-store-access-key>` with your actual values.
