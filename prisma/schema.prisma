@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db/test.db"
+}
+
+model Brand {
+  id   Int    @id @default(autoincrement())
+  name String
+  created_at DateTime @default(now())
+
+  sneakers Sneaker[]
+}
+
+model Sneaker {
+  id       String @id @default(uuid())
+  brand_id Int
+  name     String
+  price    Float
+
+  sneaker_images Sneaker_Image[]
+  sneaker_sizes Sneaker_Size[]
+  sneaker_color Sneaker_Color[]
+
+  brand Brand @relation(fields: [brand_id], references: [id])
+}
+
+model Sneaker_Size {
+  id Int @id @default(autoincrement())
+  size Int
+  available Boolean @default(true)
+  sneaker_id String
+
+  sneaker Sneaker @relation(fields: [sneaker_id], references: [id])
+}
+
+model Sneaker_Color {
+  id Int @id @default(autoincrement())
+  color String
+  available Boolean @default(true)
+  sneaker_id String
+
+  sneaker Sneaker @relation(fields: [sneaker_id], references: [id])
+}
+
+model Sneaker_Image {
+  id         Int    @id @default(autoincrement())
+  sneaker_id String
+  image      String
+
+  sneaker Sneaker @relation(fields: [sneaker_id], references: [id])
+}
