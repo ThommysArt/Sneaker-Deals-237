@@ -2,7 +2,6 @@
 
 import { Brand } from "@prisma/client"
 import db from "@/lib/prisma";
-import cloudinary from "@/lib/cloudinary";
 
 export async function getBrands (): Promise<Array<Brand>> {
     const prisma = db();
