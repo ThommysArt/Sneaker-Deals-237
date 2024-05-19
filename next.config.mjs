@@ -2,6 +2,7 @@
 const nextConfig = {
     images: {
         domains: ['files.edgestore.dev'],
+        remotePatterns: ['files.edgestore.dev'],
     },
 };
 
