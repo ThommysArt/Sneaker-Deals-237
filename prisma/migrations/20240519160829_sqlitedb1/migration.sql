@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "Useless" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "use" TEXT NOT NULL
+);

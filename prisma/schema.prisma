@@ -59,3 +59,9 @@ model Sneaker_Image {
 
   sneaker Sneaker @relation(fields: [sneaker_id], references: [id])
 }
+
+
+model Useless {
+  id Int @id @default(autoincrement())
+  use String
+}
